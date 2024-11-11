@@ -12,7 +12,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-mint">
+      <section className="pt-32 pb-16 px-4 bg-white">
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
           <div className="lg:w-1/2 animate-fade-up">
             <p className="text-accent text-lg mb-4">
