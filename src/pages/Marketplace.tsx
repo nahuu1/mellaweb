@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -40,8 +41,13 @@ const products = [
 ];
 
 const Marketplace = () => {
+  const navigate = useNavigate();
   const [sortOrder, setSortOrder] = useState("newest");
   const [category, setCategory] = useState("all");
+
+  const handleProductClick = (productId: number) => {
+    navigate(`/product/${productId}`);
+  };
 
   return (
     <div className="min-h-screen bg-[#FAFAF8]">
@@ -88,7 +94,11 @@ const Marketplace = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <Card key={product.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card 
+              key={product.id} 
+              className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => handleProductClick(product.id)}
+            >
               <div className="aspect-square overflow-hidden">
                 <img
                   src={product.image}
