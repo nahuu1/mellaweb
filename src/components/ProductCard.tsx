@@ -1,10 +1,14 @@
+import { Star } from "lucide-react";
+
 interface ProductCardProps {
   name: string;
   price: string;
   image: string;
+  rating: number;
+  reviews: number;
 }
 
-const ProductCard = ({ name, price, image }: ProductCardProps) => {
+const ProductCard = ({ name, price, image, rating, reviews }: ProductCardProps) => {
   return (
     <div className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
       <div className="aspect-square overflow-hidden">
@@ -17,6 +21,17 @@ const ProductCard = ({ name, price, image }: ProductCardProps) => {
       <div className="p-4">
         <h3 className="text-lg font-medium text-primary">{name}</h3>
         <p className="text-accent mt-1">{price}</p>
+        <div className="flex items-center gap-1 mt-2">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <Star
+              key={i}
+              className={`w-4 h-4 ${
+                i < rating ? "fill-[#ffd700] text-[#ffd700]" : "text-gray-300"
+              }`}
+            />
+          ))}
+          <span className="text-sm text-accent ml-2">({reviews})</span>
+        </div>
       </div>
     </div>
   );

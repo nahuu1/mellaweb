@@ -42,6 +42,7 @@ export default {
         },
         subtle: "#C4C3BB",
         card: "#FAFAF8",
+        mint: "#e6ffe6",
       },
       borderRadius: {
         lg: "var(--radius)",
