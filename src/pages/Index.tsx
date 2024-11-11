@@ -5,8 +5,11 @@ import Footer from "../components/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Plus, ChevronDown, ChevronUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -21,7 +24,10 @@ const Index = () => {
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-8 text-primary">
               Exclusive collection for everyone
             </h1>
-            <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2">
+            <button 
+              onClick={() => navigate('/marketplace')}
+              className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors flex items-center gap-2"
+            >
               Explore now
               <span className="inline-block">→</span>
             </button>
