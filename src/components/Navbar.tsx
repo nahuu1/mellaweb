@@ -11,9 +11,6 @@ const Navbar = () => {
           <Link to="/mobile" className="nav-link">Mobile phone</Link>
           <Link to="/laptop" className="nav-link">Laptop</Link>
           <Link to="/gadget" className="nav-link">Gadget</Link>
-          <Link to="/tv" className="nav-link">TV</Link>
-          <Link to="/tablet" className="nav-link">Tablet</Link>
-          <Link to="/headphone" className="nav-link">Headphone</Link>
         </div>
 
         <div className="flex items-center space-x-6">
