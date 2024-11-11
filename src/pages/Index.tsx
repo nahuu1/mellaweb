@@ -3,7 +3,7 @@ import CategoryNav from "../components/CategoryNav";
 import ProductCard from "../components/ProductCard";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, Plus, ChevronDown, ChevronUp } from "lucide-react";
 
 const Index = () => {
   return (
@@ -119,7 +119,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center space-y-4">
               <div className="bg-purple-50 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                <img src="/filter.svg" alt="Filter" className="w-10 h-10" />
+                <ChevronDown className="w-10 h-10 text-purple-600" />
               </div>
               <p className="text-sm text-purple-600">Step 1</p>
               <h3 className="font-semibold text-lg">Filter & Discover</h3>
@@ -128,7 +128,7 @@ const Index = () => {
             
             <div className="text-center space-y-4">
               <div className="bg-blue-50 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                <img src="/cart.svg" alt="Add to bag" className="w-10 h-10" />
+                <Plus className="w-10 h-10 text-blue-600" />
               </div>
               <p className="text-sm text-blue-600">Step 2</p>
               <h3 className="font-semibold text-lg">Add to bag</h3>
@@ -137,7 +137,7 @@ const Index = () => {
 
             <div className="text-center space-y-4">
               <div className="bg-yellow-50 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                <img src="/shipping.svg" alt="Fast shipping" className="w-10 h-10" />
+                <ChevronUp className="w-10 h-10 text-yellow-600" />
               </div>
               <p className="text-sm text-yellow-600">Step 3</p>
               <h3 className="font-semibold text-lg">Fast shipping</h3>
@@ -146,7 +146,7 @@ const Index = () => {
 
             <div className="text-center space-y-4">
               <div className="bg-pink-50 w-20 h-20 mx-auto rounded-lg flex items-center justify-center">
-                <img src="/enjoy.svg" alt="Enjoy product" className="w-10 h-10" />
+                <Check className="w-10 h-10 text-pink-600" />
               </div>
               <p className="text-sm text-pink-600">Step 4</p>
               <h3 className="font-semibold text-lg">Enjoy the product</h3>
