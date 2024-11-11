@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import CategoryNav from "../components/CategoryNav";
 import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Plus, ChevronDown, ChevronUp } from "lucide-react";
@@ -155,6 +156,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
