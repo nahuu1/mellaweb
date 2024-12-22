@@ -3,39 +3,43 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
 import { Card } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Star } from "lucide-react";
+import { Star, MapPin } from "lucide-react";
 
 const products = [
   {
     id: 1,
     name: "Test Item",
-    price: "$1,232",
+    price: "1,232",
     rating: 0,
     reviews: 0,
+    distance: 2.3,
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
   },
   {
     id: 2,
     name: "Premium Laptop",
-    price: "$1,231",
+    price: "1,231",
     rating: 0,
     reviews: 0,
+    distance: 1.5,
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
   },
   {
     id: 3,
     name: "Smart Gadget",
-    price: "$1,234",
+    price: "1,234",
     rating: 0,
     reviews: 0,
+    distance: 3.1,
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
   },
   {
     id: 4,
     name: "Tech Accessory",
-    price: "$21",
+    price: "21",
     rating: 1,
     reviews: 0,
+    distance: 2.8,
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
   }
 ];
@@ -47,6 +51,10 @@ const Marketplace = () => {
 
   const handleProductClick = (productId: number) => {
     navigate(`/product/${productId}`);
+  };
+
+  const handleFindWorkers = () => {
+    navigate('/workers');
   };
 
   return (
@@ -77,6 +85,13 @@ const Marketplace = () => {
                 <SelectItem value="gadget">Gadgets</SelectItem>
               </SelectContent>
             </Select>
+
+            <button
+              onClick={handleFindWorkers}
+              className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors"
+            >
+              Find Workers
+            </button>
           </div>
 
           <Select value={sortOrder} onValueChange={setSortOrder}>
@@ -88,6 +103,7 @@ const Marketplace = () => {
               <SelectItem value="price-asc">Price: Low to High</SelectItem>
               <SelectItem value="price-desc">Price: High to Low</SelectItem>
               <SelectItem value="rating">Rating</SelectItem>
+              <SelectItem value="distance">Distance</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -108,14 +124,18 @@ const Marketplace = () => {
               </div>
               <div className="p-4">
                 <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
-                <div className="flex items-center justify-between">
-                  <span className="text-primary font-medium">{product.price}</span>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-primary font-medium">{product.price} Birr</span>
                   <div className="flex items-center gap-1">
                     <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                     <span className="text-sm text-accent">
                       {product.rating} ({product.reviews})
                     </span>
                   </div>
+                </div>
+                <div className="flex items-center gap-1 text-sm text-accent">
+                  <MapPin className="w-4 h-4" />
+                  <span>{product.distance} km away</span>
                 </div>
               </div>
             </Card>

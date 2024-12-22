@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import Index from "./pages/Index";
 import Marketplace from "./pages/Marketplace";
 import ProductDetails from "./pages/ProductDetails";
+import Workers from "./pages/Workers";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="/marketplace" element={<Marketplace />} />
                 <Route path="/product/:id" element={<ProductDetails />} />
+                <Route path="/workers" element={<Workers />} />
               </Routes>
             </BrowserRouter>
           </TooltipProvider>

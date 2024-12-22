@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from "../components/Navbar";
-import { Star } from "lucide-react";
+import { Star, MapPin } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -12,12 +12,12 @@ import { Button } from "@/components/ui/button";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  // In a real app, you would fetch the product details using the id
   const product = {
     name: "Test Item",
-    price: "$1,232",
+    price: "1,232",
     rating: 0,
     reviews: 0,
+    distance: 2.3,
     images: [
       "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
       "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
@@ -32,7 +32,6 @@ const ProductDetails = () => {
       
       <main className="container mx-auto px-4 pt-32 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Product Images */}
           <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-lg">
               <img
@@ -54,11 +53,10 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Product Info */}
           <div className="space-y-6">
             <h1 className="text-4xl font-bold">{product.name}</h1>
             <div className="flex items-center gap-4">
-              <span className="text-2xl font-semibold text-primary">{product.price}</span>
+              <span className="text-2xl font-semibold text-primary">{product.price} Birr</span>
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star
@@ -72,6 +70,11 @@ const ProductDetails = () => {
                   ({product.reviews} reviews)
                 </span>
               </div>
+            </div>
+
+            <div className="flex items-center gap-1 text-sm text-accent">
+              <MapPin className="w-4 h-4" />
+              <span>{product.distance} km away</span>
             </div>
 
             <Button className="w-full lg:w-auto">Add to Cart</Button>
@@ -99,11 +102,10 @@ const ProductDetails = () => {
               </AccordionItem>
             </Accordion>
 
-            {/* Shipping Info */}
             <div className="grid grid-cols-2 gap-4 pt-8">
               <div className="bg-muted p-4 rounded-lg">
                 <h3 className="font-semibold mb-2">Free shipping</h3>
-                <p className="text-sm text-accent">On orders over $50.00</p>
+                <p className="text-sm text-accent">On orders over 2000 Birr</p>
               </div>
               <div className="bg-muted p-4 rounded-lg">
                 <h3 className="font-semibold mb-2">Very easy to return</h3>
