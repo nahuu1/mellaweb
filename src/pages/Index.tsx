@@ -50,16 +50,16 @@ const Index = () => {
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: userLocation,
+      center: userLocation as [number, number],
       zoom: 12
     });
 
     // Add user marker
     new mapboxgl.Marker({ color: '#FF0000' })
-      .setLngLat(userLocation)
+      .setLngLat(userLocation as [number, number])
       .addTo(map.current);
 
-    // Mock emergency workers (in real app, fetch from backend)
+    // Mock emergency workers
     const workers = [
       { lngLat: [userLocation[0] + 0.01, userLocation[1] + 0.01], type: 'ambulance' },
       { lngLat: [userLocation[0] - 0.01, userLocation[1] - 0.01], type: 'police' },
@@ -68,7 +68,7 @@ const Index = () => {
 
     workers.forEach(worker => {
       new mapboxgl.Marker({ color: '#00FF00' })
-        .setLngLat(worker.lngLat)
+        .setLngLat(worker.lngLat as [number, number])
         .addTo(map.current!);
     });
 
