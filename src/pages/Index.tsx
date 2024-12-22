@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, Ambulance, Police, FireEngine, Shield } from "lucide-react";
+import { ArrowRight, Ambulance, ShieldAlert, FireExtinguisher, Car } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -50,17 +50,17 @@ const Index = () => {
                 color="bg-red-500"
               />
               <EmergencyButton 
-                icon={<Police className="w-8 h-8" />}
+                icon={<ShieldAlert className="w-8 h-8" />}
                 title="Police"
                 color="bg-blue-500"
               />
               <EmergencyButton 
-                icon={<FireEngine className="w-8 h-8" />}
+                icon={<FireExtinguisher className="w-8 h-8" />}
                 title="Fire"
                 color="bg-orange-500"
               />
               <EmergencyButton 
-                icon={<Shield className="w-8 h-8" />}
+                icon={<Car className="w-8 h-8" />}
                 title="Traffic"
                 color="bg-green-500"
               />
