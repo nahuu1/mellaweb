@@ -10,6 +10,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { Ambulance, ShieldAlert, FireExtinguisher, Car } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../utils/translations";
+import Navbar from '../components/Navbar';
 
 const Index = () => {
   const { language } = useLanguage();
@@ -114,8 +115,9 @@ const Index = () => {
 
   if (currentUser) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-24">
-        <div className="max-w-6xl mx-auto px-4">
+      <div className="min-h-screen bg-gray-50">
+        <Navbar />
+        <div className="max-w-6xl mx-auto px-4 pt-24">
           <Card className="p-6 mb-6">
             <div className="flex justify-between items-center">
               <div>
