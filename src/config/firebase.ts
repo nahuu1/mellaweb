@@ -2,12 +2,14 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "YOUR_ACTUAL_API_KEY",
-  authDomain: "YOUR_ACTUAL_AUTH_DOMAIN",
-  projectId: "YOUR_ACTUAL_PROJECT_ID",
-  storageBucket: "YOUR_ACTUAL_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_ACTUAL_MESSAGING_SENDER_ID",
-  appId: "YOUR_ACTUAL_APP_ID"
+  apiKey: "AIzaSyCY1aYD1QaSxJzEZgoIlvAOgkOPvA5OUGY",
+  authDomain: "mella-ad045.firebaseapp.com",
+  databaseURL: "https://mella-ad045-default-rtdb.firebaseio.com",
+  projectId: "mella-ad045",
+  storageBucket: "mella-ad045.firebasestorage.app",
+  messagingSenderId: "60402681356",
+  appId: "1:60402681356:web:84ae536a349f7887b71029",
+  measurementId: "G-PWFZ0TC0X5"
 };
 
 const app = initializeApp(firebaseConfig);
